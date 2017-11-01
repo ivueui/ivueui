@@ -1,0 +1,458 @@
+@import "normalize";
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: @font-family;
+    font-size: @font-size-small;
+    line-height: @line-height-base;
+    color: @text-color;
+    background-color: @body-background;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+a {
+    color: @link-color;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: color @transition-time ease;
+
+    &:hover {
+        color: @link-hover-color;
+    }
+
+    &:active {
+        color: @link-active-color;
+    }
+
+    &:active,
+    &:hover {
+        outline: 0;
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        color: #ccc;
+        cursor: @cursor-disabled;
+        pointer-events: none;
+    }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: @code-family;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width:8px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius:0px;
+    background: rgba(151,168,190,.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+}
+
+/* Timer*/
+.loding-timer{
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border-radius: 50%;
+    position: relative;
+    margin: 38px auto;/* Not necessary- its only for layouting*/
+ }
+.loding-timer:after,.loding-timer:before{
+    position: absolute;
+    content:"";
+    background-color: #fff;
+}
+.loding-timer:after{
+    width: 10px;
+    height: 2px;
+    top: 11px;
+    left: 11px;
+    -webkit-transform-origin: 1px 1px;
+       -moz-transform-origin: 1px 1px;
+            transform-origin: 1px 1px;
+    -webkit-animation: minhand 2s linear infinite;
+       -moz-animation: minhand 2s linear infinite;
+            animation: minhand 2s linear infinite;
+}
+
+.loding-timer:before{
+    width: 8px;
+    height: 2px;
+    top: 11px;
+    left: 11px;
+    -webkit-transform-origin: 1px 1px;
+       -moz-transform-origin: 1px 1px;
+            transform-origin: 1px 1px;
+    -webkit-animation: hrhand 8s linear infinite;
+       -moz-animation: hrhand 8s linear infinite;
+            animation: hrhand 8s linear infinite;
+}
+
+@-webkit-keyframes minhand{
+    0%{-webkit-transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes minhand{
+    0%{-moz-transform:rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@keyframes minhand{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+@-webkit-keyframes hrhand{
+    0%{-webkit-transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes hrhand{
+    0%{-moz-transform:rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@keyframes hrhand{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+/*Typing Loader*/
+.loding-typing_loader{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    -webkit-animation: typing 1s linear infinite alternate;
+       -moz-animation: Typing 1s linear infinite alternate;
+       -ms-animation: Typing 1s linear infinite alternate;
+            animation: typing 1s linear infinite alternate;
+    margin: 46px auto; /* Not necessary- its only for layouting*/
+    position: relative;
+    left: -12px;
+}
+@-webkit-keyframes typing{
+    0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+
+@-moz-keyframes typing{
+   0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+
+@keyframes typing{
+   0%{
+        background-color: rgba(255,255,255, 1);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+      }
+    25%{
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,2),
+                    24px 0px 0px 0px rgba(255,255,255,0.2);
+    }
+    75%{ background-color: rgba(255,255,255, 0.4);
+        box-shadow: 12px 0px 0px 0px rgba(255,255,255,0.2),
+                    24px 0px 0px 0px rgba(255,255,255,1);
+      }
+}
+
+/*Location indicator */
+.loding-location_indicator{
+    margin: 30px auto;
+    position: relative;
+    left: -9px;
+}
+
+.loding-location_indicator:before, .loding-location_indicator:after{
+    position: absolute;
+    content: "";
+}
+
+.loding-location_indicator:before{
+    width: 20px;
+    height: 20px;
+    border-radius: 100% 100% 100% 0;
+    box-shadow: 0px 0px 0px 2px rgba(255,255,255,1);
+    -webkit-animation: mapping 1s linear infinite;
+       -moz-animation: mapping 1s linear infinite;
+            animation: mapping 1s linear infinite;
+    -webkit-transform: rotate(-46deg);
+       -moz-transform: rotate(-46deg);
+            transform: rotate(-46deg);
+
+}
+
+.loding-location_indicator:after{
+    width: 30px;
+    height: 10px;
+    border-radius: 100%;
+    left: 44px;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 24px;
+    z-index: -1;
+}
+
+@-webkit-keyframes mapping{
+    0% {top: 0;}
+    50%{top: -5px;}
+    100% {top:0; }
+}
+@-moz-keyframes mapping{
+    0% {top: 0;}
+    50%{top: -5px;}
+    100% {top:0; }
+}
+@-keyframes mapping{
+    0% {top: 0;}
+    50%{top: -5px;}
+    100% {top:0; }
+}
+
+/* go in*/
+.loding-dashboard{
+    width: 32px;
+    height: 32px;
+    margin: 30px auto;
+    border: 2px rgba(255,255,255,1) solid;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.loding-dashboard:after, .loding-dashboard:before{
+    position: absolute;
+    content: "";
+}
+.loding-dashboard:after{
+    width:14px;
+    height: 2px;
+    top: 20px;
+    -webkit-transform-origin: 1px 1px;
+       -moz-transform-origin: 1px 1px;
+            transform-origin: 1px 1px;
+    background-color: rgba(255,255,255,1);
+    -webkit-animation: dashboard_hand 2s linear infinite alternate;
+       -moz-animation: dashboard_hand 2s linear infinite alternate;
+            animation: dashboard_hand 2s linear infinite alternate;
+}
+.loding-dashboard:before{
+    width: 32px;
+    height: 10px;
+    background-color: rgba(255,255,255,1);
+    top:20px;
+    left: -2px;
+}
+@-webkit-keyframes dashboard_hand{
+    0%{ -webkit-transform: rotate(-160deg);}
+    100%{ -webkit-transform: rotate(-20deg);}
+}
+@-moz-keyframes dashboard_hand{
+    0%{ -moz-transform: rotate(-160deg);}
+    100%{ -moz-transform: rotate(-20deg);}
+}
+@keyframes dashboard_hand{
+    0%{ transform: rotate(-160deg);}
+    100%{ transform: rotate(-20deg);}
+}
+
+/*help*/
+.loding-help{
+    width: 30px;
+    height: 30px;
+    border: 1px #fff solid;
+    border-radius: 50%;
+    -webkit-animation: rotation 1s ease-in-out infinite;
+       -moz-animation: rotation 1s ease-in-out infinite;
+            animation: rotation 1s ease-in-out infinite;
+    margin: 30px auto;
+}
+.loding-help:after{
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255,255,255,1);
+    border-radius: 100%;
+    position: absolute;
+    content: "";
+}
+@-webkit-keyframes rotation{
+    0%{-webkit-transform: rotate(0deg);}
+    100%{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotation{
+    0%{-moz-transform: rotate(0deg);}
+    100%{-moz-transform: rotate(360deg);}
+}
+@keyframes rotation{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+/*coffee cup*/
+.loding-coffee_cup{
+    width: 30px;
+    height:33px;
+    border: 1px rgba(255,255,255,1) solid;
+    border-radius: 0px 0px 5px 5px;
+    position: relative;
+    margin: 36px auto;
+}
+.loding-coffee_cup:after, .loding-coffee_cup:before{
+    position: absolute;
+    content: "";
+}
+.loding-coffee_cup:after{
+    width: 5px;
+    height: 15px;
+    border: 1px #fff solid;
+    border-left: none;
+    border-radius: 0px 20px 20px 0px;
+    left: 29px;
+}
+.loding-coffee_cup:before{
+    width: 1px;
+    height: 6px;
+    background-color: rgba(255,255,255,1);
+    top: -10px;
+    left: 9px;
+    box-shadow: 5px 0px 0px 0px rgba(255,255,255,1),
+                5px -5px 0px 0px rgba(255,255,255,1),
+                10px 0px 0px 0px rgba(255,255,255,1);
+    -webkit-animation: steam 1s linear infinite alternate;
+       -moz-animation: steam 1s linear infinite alternate;
+            animation: steam 1s linear infinite alternate;
+}
+
+@-webkit-keyframes steam{
+    0%{height: 0px;}
+    100%{height: 6px;}
+}
+@-moz-keyframes steam{
+    0%{height: 0px}
+    100%{height: 6px;}
+}
+@keyframes steam{
+    0%{height: 0px}
+    100%{height: 6px;}
+}
+
+/*square*/
+.loding-square{
+    width: 20px;
+    height: 20px;
+    border:1px  rgba(255,255,255,1) solid;
+    margin: 36px auto;
+    position: relative;
+    -webkit-animation: fill_color 5s linear infinite;
+       -moz-animation: fill_color 5s linear infinite;
+            animation: fill_color 5s linear infinite;
+}
+.loding-square:after{
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    content: "";
+    background-color: rgba(255,255,255,1);
+    top: -8px;
+    left: 0px;
+    -webkit-animation: square_check 1s ease-in-out infinite;
+       -moz-animation: square_check 1s ease-in-out infinite;
+            animation: square_check 1s ease-in-out infinite;
+}
+@-webkit-keyframes square_check{
+    25%{ left: 22px; top: -8px;}
+    50%{ left: 22px; top: 22px;}
+    75%{ left: -9px; top: 22px;}
+    100%{ left: -9px; top: -7px;}
+}
+@-moz-keyframes square_check{
+    25%{ left: 22px; top: -8px;}
+    50%{ left: 22px; top: 22px;}
+    75%{ left: -9px; top: 22px;}
+    100%{ left: -9px; top: -7px;}
+}
+@keyframes square_check{
+    25%{ left: 22px; top: -8px;}
+    50%{ left: 22px; top: 22px;}
+    75%{ left: -9px; top: 22px;}
+    100%{ left: -9px; top: -7px;}
+}
+@-webkit-keyframes fill_color{
+    0%{ box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,0.1);}
+    100%{ box-shadow: inset 0px -20px 0px 0px rgba(255,255,255,1);}
+}
+@-moz-keyframes fill_color{
+    0%{ box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,0.1);}
+    100%{ box-shadow: inset 0px -20px 0px 0px rgba(255,255,255,1);}
+}
+@keyframes fill_color{
+    0%{ box-shadow: inset 0px 0px 0px 0px rgba(255,255,255,0.1);}
+    100%{ box-shadow: inset 0px -20px 0px 0px rgba(255,255,255,1);}
+}
