@@ -3,17 +3,22 @@
         <img width="200" src="https://ivueui.zcyso.com/assets/logo.svg">
     </a>
 </p>
-[![NPM](https://nodei.co/npm/ivueui.png)](https://nodei.co/npm/ivueui/)
 # iVueui
-[![Travis](http://shields.hust.cc/ivueui-passing-brightgreen.svg)]()
-[![Travis](http://shields.hust.cc/vue-2.4.3-green.svg)]()
-[![Travis](http://shields.hust.cc/version-2.0.1-blue.svg)]()
+[![GitHub issues](https://img.shields.io/github/issues/ivueui/ivueui.svg?style=flat-square)](https://github.com/ivueui/ivueui/issues)
+[![GitHub forks](https://img.shields.io/github/forks/ivueui/ivueui.svg?style=flat-square)](https://github.com/ivueui/ivueui/network)
+[![GitHub stars](https://img.shields.io/github/stars/ivueui/ivueui.svg?style=flat-square)](https://github.com/ivueui/ivueui/stargazers)
+[![NPM downloads](https://img.shields.io/npm/dt/ivueui.svg?style=flat-square)](https://npmjs.org/package/ivueui)
+[![NPM downloads](http://img.shields.io/npm/dm/ivueui.svg?style=flat-square)](https://npmjs.org/package/ivueui)
+[![iView](https://img.shields.io/npm/v/ivueui.svg?style=flat-square)](https://www.npmjs.org/package/ivueui)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/ivueui/ivueui/master/LICENSE)
+
+[![NPM](https://nodei.co/npm/ivueui.png)](https://nodei.co/npm/ivueui/)
 
 ### A high quality UI Toolkit built on Vue.js.
 
 > 此分支版本为 Vue.js 2.x.
 >
-> The branch for Vue.js 1.x can be found [here](https://github.com/iview/iview/tree/master).
+> The branch for Vue.js 1.x can be found [here](https://github.com/ivueui/ivueui/tree/master).
 
 ## Docs
 
